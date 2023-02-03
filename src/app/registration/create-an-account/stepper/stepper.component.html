@@ -1,0 +1,8 @@
+<div class="stepper">
+    <div class="step" *ngFor="let step of steps;index as indexOfStep">
+        <div *ngIf='step.number == currentStepNumber' isActive="true" class="stepNumber">{{ step.number }}</div>
+        <div *ngIf='step.number != currentStepNumber' isActive="false" class="stepNumber">{{ step.number }}</div>
+        <div class="stepName">{{ step.name }}</div>
+        <hr *ngIf="(steps.length-1) != indexOfStep" />
+    </div>
+</div>

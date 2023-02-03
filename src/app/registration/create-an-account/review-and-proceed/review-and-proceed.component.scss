@@ -1,0 +1,18 @@
+@import '../../../../app/shared/colors/var';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .edit {
+        img {
+            width: 18px;
+            height: 18px;
+        }
+
+        display: flex;
+        column-gap: 9px;
+        color: $accentColor;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="main">
+    <app-educational-qualification class="marginBottom" ></app-educational-qualification>
+    <app-professional-qualification class="marginBottom" ></app-professional-qualification>
+    <div class="buttons marginBottom" >
+        <button (click)="updateCurrentStepNumber.emit(1)" >PREVIOUS</button>
+        <button class="nextButton" (click)="updateCurrentStepNumber.emit(3)">NEXT</button>
+    </div>
+</div>

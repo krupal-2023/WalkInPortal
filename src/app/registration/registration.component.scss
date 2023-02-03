@@ -1,0 +1,127 @@
+@import '../../app/shared/colors/var';
+
+.main {
+    height:90%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: auto;
+    width: 490px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 4px solid #3AC7EC;
+    border-radius: 1px;
+    padding: 20px;
+
+    .title {
+        font-family: 'Quicksand-Medium';
+        font-size: 24px;
+        margin-bottom: 32px;
+        cursor: default;
+    }
+
+    input[type='email'], input[type='password'] {
+        border: none;
+        border-bottom: 1px solid black;
+        font-family: 'Quicksand-Medium';
+        font-size: 16px;
+        color: #666666;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .rememberMe {
+        width: 100%;
+        font-family: 'Quicksand-Medium';
+        font-size: 16px;
+        color: #222222;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .createAnAccount {
+        color: $accentColor;
+        font-family: 'Quicksand-Medium';
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .password {
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid black;
+        margin-top: 30px;
+
+        img {
+            cursor: pointer;
+        }
+
+        input[type='password'] {
+            border:none;
+        }
+    }
+
+    .forgotEmail, .forgotPassword {
+        color: $accentColor;
+        font-family: 'Quicksand-Medium';
+        font-size: 14px;
+        margin-left: auto;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+
+    .notRegisteredYet {
+        font-family: 'Quicksand-Medium';
+        font-size: 12px;
+        margin-bottom: 4px;
+        cursor: default;
+    }
+
+    button {
+        font-family: 'Quicksand-Medium';
+        font-size: 14px;
+        margin-top: 34px;
+        margin-bottom: 24px;
+        background-color: $primary;
+        width: 216px;
+        height: 40px;
+        border: none;
+        box-shadow: 0px 3px 5px #0000003D;
+        cursor: pointer;
+    }
+
+}
+
+.footer {
+    display: flex;
+    color: $accentColor;
+    column-gap: 3px;
+    margin-top: auto;
+    margin-bottom: 10px;
+    
+    .about {
+        cursor: pointer;
+        margin-left: auto;
+    }
+    .contactUs {
+        cursor: pointer;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        width: 70%;
+    }
+}

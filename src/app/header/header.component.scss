@@ -1,0 +1,29 @@
+@import '../shared/colors/_var.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1F2834;
+    opacity: 1;
+    border-bottom: 3px solid #31B9E4;
+    padding: 0 20px;
+    align-items: center;
+}
+
+img {
+    margin: 10px 0;
+}
+
+.avatar {
+    border: 2px solid $primary;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #3C4E62;
+    color: white;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand-Medium';
+    font-size: 16px;
+}

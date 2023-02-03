@@ -1,0 +1,53 @@
+@import '../../shared/colors/var';
+
+.appBar {
+    height: 48px;
+    background-color: #3C4E62;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    position: relative;
+
+    .title {
+        cursor: default;
+        color: white;
+        margin: auto;
+        font-size: 16px;
+    }
+
+    .cancelButton, .createButton {
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        background-color: $primary;
+        font-family: 'Quicksand-Medium';
+        padding: 5px 19px;
+    }
+
+    .createButton {
+        opacity: 40%;
+        cursor: not-allowed;
+    }
+
+    .actions {
+        display: flex;
+        column-gap: 10px;
+        position: absolute;
+        right: 24px;
+    }
+
+    .backButton {
+        cursor: pointer;
+        height: 24px;
+        position: absolute;
+        left: 28px;
+    }
+}
+
+.body {
+    margin-left: 28px;
+    margin-right: 24px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+  }

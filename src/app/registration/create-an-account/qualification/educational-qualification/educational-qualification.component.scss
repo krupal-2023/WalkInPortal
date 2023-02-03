@@ -1,0 +1,44 @@
+.main {
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #dbefff;
+    padding: 11px 16px;
+    align-items: center;
+    box-shadow: 0px 4px 6px #00000029;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    row-gap: 37px;
+
+    #percentage,
+    #yearOfPassing,
+    #collegeLocation {
+      display: flex;
+      flex-direction: column;
+      row-gap: 3px;
+        width: 180px;
+    }
+
+    #qualification,
+    #stream,
+    #college,
+    #otherCollege {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        width: 100%;
+    }
+
+    .row {
+      display: flex;
+      column-gap: 20px;
+    }
+  }
+}

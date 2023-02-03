@@ -1,0 +1,69 @@
+<div class="main">
+  <div class="header">
+    <div class="title">Educational Qualification</div>
+    <div class="dropdownIcon">
+      <img
+        *ngIf="isProfessionalQualificationOpen == true"
+        (click)="toggleProfessionalQualification()"
+        src="../../../../../assets/fromDrive/expand_less_black_24dp.svg"
+        alt="Up"
+      />
+      <img
+        *ngIf="isProfessionalQualificationOpen == false"
+        (click)="toggleProfessionalQualification()"
+        src="../../../../../assets/fromDrive/expand_more.svg"
+        alt="Up"
+      />
+    </div>
+  </div>
+  <div *ngIf="isProfessionalQualificationOpen == true" class="container">
+    <div class="applicantType">
+      <label>Applicant Type*</label>
+      <div class="row">
+        <div class="radioWrapper">
+          <input type="radio" name="applicantType" id="fresher" />
+          <label for="fresher">Fresher</label>
+        </div>
+        <div class="radioWrapper">
+          <input type="radio" name="applicantType" id="experienced" />
+          <label for="experienced">Experienced</label>
+        </div>
+      </div>
+    </div>
+    <div class="technicalSection">
+      <label class="title">Select All The Technologies You Are Familiar In</label>
+      <div class="technologies">
+        <div
+          class="technology"
+          *ngFor="let technology of technologies; index as indexOfTech"
+        >
+          <input type="checkbox" id="technology{{ indexOfTech }}" />
+          <label for="technology{{ indexOfTech }}">{{ technology }}</label>
+        </div>
+      </div>
+      <div class="otherTechnology">
+        <label for="otherTechnology"> If others, please mention </label>
+        <input type="text" id="otherTechnology" />
+      </div>
+      <div class="previouslyApplied">
+        <label
+          >Have You Appeared For Any Test By Zeus in the past 12 months?*</label
+        >
+        <div class="row">
+          <div class="radioWrapper">
+          <input type="radio" name="previouslyApplied" id="yes-radio" /><label
+            for="yes-radio"
+            >Yes</label
+          ></div>
+          <div class="radioWrapper">
+          <input type="radio" name="previouslyApplied" id="no-radio" />
+          <label for="no-radio"
+            >No</label
+          ></div>
+        </div>
+        <label for="whichRole">If Yes, which role did you apply for?</label>
+        <input type="text" id="whichRole">
+      </div>
+    </div>
+  </div>
+</div>

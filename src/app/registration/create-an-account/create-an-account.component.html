@@ -1,0 +1,16 @@
+<div class="appBar">
+    <img class="backButton" src="../../../../assets/fromDrive/back.svg" alt="Back">
+    <div class="title">Create An Account</div>
+    <div class="actions">
+        <button class="cancelButton">CANCEL</button>
+        <button class="createButton">CREATE</button>
+    </div>
+</div>
+<div class="body">
+    
+    <app-stepper [currentStepNumber]="currentStepNumber"></app-stepper>
+
+    <app-personal-information *ngIf="currentStepNumber == 1" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-personal-information>
+    <app-qualification *ngIf="currentStepNumber == 2" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-qualification>
+    <app-review-and-proceed *ngIf="currentStepNumber == 3" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-review-and-proceed>
+</div>

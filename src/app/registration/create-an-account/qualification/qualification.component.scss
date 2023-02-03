@@ -1,0 +1,25 @@
+@import '../../../../app/shared/colors/var';
+
+.main {
+
+    .buttons {
+        display: flex;
+        column-gap: 16px;
+        justify-content: center;
+
+        button {
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            background-color: $primary;
+            padding: 5px 16px;
+            height: 28px;
+            box-shadow: 0px 3px 5px #0000003d;
+            margin-bottom: 20px;
+        }
+
+        .nextButton {
+            padding: 5px 27px;
+        }
+    }
+}

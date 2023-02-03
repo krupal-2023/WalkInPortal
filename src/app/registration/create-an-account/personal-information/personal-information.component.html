@@ -1,0 +1,69 @@
+<form class="main">
+  <div class="container">
+    <div class="personalInformation">
+      <div class="firstName">
+        <label for="firstName">First Name*</label>
+        <input type="text" id="firstName" placeholder="e.g. John" />
+      </div>
+      <div class="lastName">
+        <label for="lastName">Last Name*</label>
+        <input type="text" id="lastName" placeholder="e.g. Watson" />
+      </div>
+      <div class="email">
+        <label for="email">Email*</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="e.g. example@zeuslearning.com"
+        />
+      </div>
+      <div class="phoneNumber">
+        <label for="phoneNumber">Phone Number*</label>
+        <div class="row">
+          +
+          <input type="tel" id="countryCode" />
+          <input type="tel" id="phoneNumber" />
+        </div>
+      </div>
+      <div class="uploadResume">
+        <img
+          src="../../../../assets/fromDrive/Upload_black_24dp.svg"
+          alt="Upload"
+        />
+        <div>UPLOAD RESUME</div>
+      </div>
+      <div class="portfolio">
+        <label for="portfolioUrl">Enter portfolioUrl URL (If any)</label>
+        <input type="url" placeholder="e.g. krupalvasani.github.io" />
+      </div>
+      <div class="jobRoles">
+        <label>Preferred Job Roles*</label>
+        <div *ngFor="let jobRole of jobRoles; index as i" class="jobRole">
+          <input type="checkbox" value="{{ jobRole }}" id="{{ i }}id" />
+          <label for="{{ i }}id">{{ jobRole }}</label>
+        </div>
+      </div>
+      <div class="yourReferral">
+        <label for="referralName">
+          If You Are Registering Via A Referral, Please Mention Full Name Of The
+          Employee Who Referred You
+        </label>
+        <input type="text" id="referralName" />
+      </div>
+      <div class="sendMeJobRelated">
+        <input type="checkbox" id="sendMeJobRelatedMails" />
+        <label for="sendMeJobRelatedMails"
+          >Send me job related updates via mail</label
+        >
+      </div>
+    </div>
+    <div class="avatar">
+      <img src="../../../../assets/fromDrive/profile.png" alt="" />
+      <div class="uploadDisplayPicture">UPLOAD DISPLAY PICTURE</div>
+      <div class="description">Max. image size: 5 MB</div>
+    </div>
+  </div>
+  <button class="nextButton" type="submit" (click)="onClickNext($event)">
+    NEXT
+  </button>
+</form>

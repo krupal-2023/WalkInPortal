@@ -1,0 +1,81 @@
+<div class="main">
+  <div class="header">
+    <div class="title">Educational Qualification</div>
+    <div class="dropdownIcon">
+      <img
+        *ngIf="isEducationalQualificationOpen == true"
+        (click)="toggleEducationalQualification()"
+        src="../../../../../assets/fromDrive/expand_less_black_24dp.svg"
+        alt="Up"
+      />
+      <img
+        *ngIf="isEducationalQualificationOpen == false"
+        (click)="toggleEducationalQualification()"
+        src="../../../../../assets/fromDrive/expand_more.svg"
+        alt="Up"
+      />
+    </div>
+  </div>
+  <div *ngIf="isEducationalQualificationOpen == true" class="container">
+    <div id="percentage">
+      <label for="percentage"> Aggregate Percentage* </label>
+      <input type="number" />
+    </div>
+    <div id="yearOfPassing">
+      <label for="yearOfPassing">Year Of Passing*</label>
+      <select>
+        <option
+          *ngFor="let yearOfPassing of yearsOfPassing"
+          value="yearOfPassing"
+        >
+          {{ yearOfPassing }}
+        </option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div id="qualification">
+        <label for="qualification"> Qualification* </label>
+        <select>
+          <option
+            *ngFor="let qualification of qualifications"
+            value="qualification"
+          >
+            {{ qualification }}
+          </option>
+        </select>
+      </div>
+      <div id="stream">
+        <label for="stream"> Stream* </label>
+        <select id="stream">
+          <option *ngFor="let stream of streams" value="stream">
+            {{ stream }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+        <div id="college">
+            <label for="college">
+College*
+            </label>
+            <select>
+                <option *ngFor='let college of colleges' value="college">
+                    {{ college }}
+                </option>
+            </select>
+        </div>
+        <div id="otherCollege">
+            <label for="otherCollege">
+If others, please enter your college name
+            </label>
+            <input type="text" >
+        </div>
+    </div>
+    <div id="collegeLocation">
+        <label for="collegeLocation">Where is your college located?*</label>
+        <input type="text" >
+    </div>
+  </div>
+</div>

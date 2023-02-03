@@ -1,0 +1,141 @@
+@import "../../../../app/shared/colors/var";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.personalInformation {
+  width: 480px;
+  border-radius: 2px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+
+  label {
+    font-size: 12px;
+    color: #666666;
+  }
+
+  .firstName,
+  .lastName,
+  .email,
+  .portfolio,
+  .yourReferral {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      font-size: 16px;
+      border: none;
+      border-bottom: 1px solid black;
+      font-family: "Quicksand-Medium";
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .phoneNumber {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      border: none;
+      font-family: "Quicksand-Medium";
+      font-size: 16px;
+      &:focus {
+        outline: none;
+      }
+      border-bottom: 1px solid black;
+    }
+
+    .row {
+      display: flex;
+      column-gap: 3px;
+    }
+
+    #countryCode {
+      width: 15px;
+    }
+
+    #phoneNumber {
+      width: 89px;
+    }
+  }
+
+  .uploadResume {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    color: $accentColor;
+    font-size: 14px;
+
+    img {
+      height: 24px;
+      width: 19px;
+    }
+  }
+
+  .jobRoles {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .jobRole,
+  .sendMeJobRelated {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    label {
+      font-size: 16px;
+      color: black;
+    }
+  }
+}
+
+.avatar {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+
+  img {
+    width: 112px;
+  }
+
+  .uploadDisplayPicture {
+    font-size: 12px;
+    color: $accentColor;
+  }
+  .description {
+    font-size: 10px;
+    color: grey;
+  }
+}
+
+.nextButton {
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  background-color: $primary;
+  font-family: "Quicksand-Medium";
+  padding: 5px 27px;
+  width: 90px;
+  height: 28px;
+  box-shadow: 0px 3px 5px #0000003d;
+  margin-bottom: 20px;
+}

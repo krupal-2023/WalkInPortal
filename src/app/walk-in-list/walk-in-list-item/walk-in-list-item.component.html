@@ -1,0 +1,28 @@
+<div class="title">{{ walkInListItem.title }}</div>
+      <div class="dateTimeLabel">Date & Time :</div>
+      <div class="dateAndLocation">
+        <div class="date">
+          {{ dateToString(walkInListItem.startDate) }} to
+          {{ dateToString(walkInListItem.endDate) }}
+        </div>
+        |
+        <div class="location"> <img src="../../assets/fromDrive/location_on_black_24dp.svg" alt="">Mumbai</div>
+      </div>
+      <hr />
+      <div class="jobRolesLabel">
+        Job Roles :
+      </div>
+      <div class="jobRoles">
+        <div class="jobRole" *ngFor="let jobRole of walkInListItem.jobRoles; index as indexOfJobRole">
+            <img src="{{ jobRole.image }}" alt="Job">
+            <span>{{ jobRole.title }}</span>
+            <div *ngIf="indexOfJobRole != (walkInListItem.jobRoles.length-1)">&nbsp;|</div>
+        </div>
+      </div>
+      <div class="additionalTags">
+          <span class="additionalTag" *ngFor="let additionalTag of walkInListItem.additionalTags">
+            {{ additionalTag }}
+          </span>
+      </div>
+      <button>VIEW MORE DETAILS</button>
+      <div class="expireTag" *ngIf="walkInListItem.isExpires == true">Expires in 5 days</div>
