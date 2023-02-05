@@ -20,13 +20,9 @@
     <div class="applicantType">
       <label>Applicant Type*</label>
       <div class="row">
-        <div class="radioWrapper">
-          <input type="radio" name="applicantType" id="fresher" />
-          <label for="fresher">Fresher</label>
-        </div>
-        <div class="radioWrapper">
-          <input type="radio" name="applicantType" id="experienced" />
-          <label for="experienced">Experienced</label>
+        <div class="radioWrapper" *ngFor="let applicantType of applicantTypes;index as id">
+          <input type="radio" name="applicantType" id="applicantType{{id}}" />
+          <label for="applicantType{{id}}">{{applicantType}}</label>
         </div>
       </div>
     </div>
@@ -51,13 +47,13 @@
         >
         <div class="row">
           <div class="radioWrapper">
-          <input type="radio" name="previouslyApplied" id="yes-radio" /><label
-            for="yes-radio"
+          <input type="radio" name="previouslyApplied" id="appeared" /><label
+            for="appeared"
             >Yes</label
           ></div>
           <div class="radioWrapper">
-          <input type="radio" name="previouslyApplied" id="no-radio" />
-          <label for="no-radio"
+          <input type="radio" name="previouslyApplied" id="not-appeared" />
+          <label for="not-appeared"
             >No</label
           ></div>
         </div>

@@ -79,7 +79,6 @@ export class PersonalInformationComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.loadSavedData();
-    console.log(this.educationalQualification)
   }
 
   onImageUpload(event: Event): void {

@@ -38,3 +38,11 @@ export interface IEducationalQualification {
     otherCollege: string;
     collegeLocation: string;
 }
+
+export interface IProfessionalQualification {
+    applicantTypeId: number;
+    technologyIds: number[];
+    otherTechnology: string;
+    haveYouAppeared: boolean;
+    ifYesWhichRole: string
+}

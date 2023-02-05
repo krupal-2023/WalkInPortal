@@ -20,7 +20,9 @@
         *ngIf="currentStepNumber == 2" 
         (updateCurrentStepNumber)="updateCurrentStepNumber($event)"
         [educationalQualification]="educationalQualification"
-        (saveEducationalQualification)="saveEducationalQualification($event)">
+        (saveEducationalQualification)="saveEducationalQualification($event)"
+        [professionalQualification]="professionalQualification"
+        (saveProfessionalQualification)="saveProfessionalQualification($event)">
     </app-qualification>
     <app-review-and-proceed 
         *ngIf="currentStepNumber == 3" 
