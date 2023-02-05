@@ -10,7 +10,16 @@
     
     <app-stepper [currentStepNumber]="currentStepNumber"></app-stepper>
 
-    <app-personal-information *ngIf="currentStepNumber == 1" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-personal-information>
+    <app-personal-information 
+        *ngIf="currentStepNumber == 1" 
+        (updateCurrentStepNumber)="updateCurrentStepNumber($event)" 
+        (savePersonalInformation)="savePersonalInformation($event)" 
+        [savedPersonalInformation]="personalInformation">
+    </app-personal-information>
     <app-qualification *ngIf="currentStepNumber == 2" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-qualification>
-    <app-review-and-proceed *ngIf="currentStepNumber == 3" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-review-and-proceed>
+    <app-review-and-proceed 
+        *ngIf="currentStepNumber == 3" 
+        (updateCurrentStepNumber)="updateCurrentStepNumber($event)"
+        [savedPersonalInformation]="personalInformation" >
+    </app-review-and-proceed>
 </div>

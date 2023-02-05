@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IWalkInListItem } from '../shared/interfaces';
-import { walkInListJson } from '../../assets/data/walkInList'
+import { walkInListJson } from '../shared/data/walkInList'
 
 @Component({
   selector: 'app-walk-in-list',

@@ -25,22 +25,26 @@
           <input type="tel" id="phoneNumber" />
         </div>
       </div>
-      <div class="uploadResume">
-        <img
-          src="../../../../assets/fromDrive/Upload_black_24dp.svg"
-          alt="Upload"
-        />
-        <div>UPLOAD RESUME</div>
+      <div class="uploadResumeWrapper">
+        <div class="uploadResume">
+          <img
+            src="../../../../assets/fromDrive/Upload_black_24dp.svg"
+            alt="Upload"
+          />
+          <input type="file" id="uploadResume" accept="application/pdf" (change)="onResumeUpload($event)">
+          <label for="uploadResume">UPLOAD RESUME</label>
+        </div>
+        <div id="uploadedResumeName"></div>
       </div>
       <div class="portfolio">
         <label for="portfolioUrl">Enter portfolioUrl URL (If any)</label>
-        <input type="url" placeholder="e.g. krupalvasani.github.io" />
+        <input type="url" id="portfolioUrl" placeholder="e.g. krupalvasani.github.io" />
       </div>
       <div class="jobRoles">
         <label>Preferred Job Roles*</label>
-        <div *ngFor="let jobRole of jobRoles; index as i" class="jobRole">
-          <input type="checkbox" value="{{ jobRole }}" id="{{ i }}id" />
-          <label for="{{ i }}id">{{ jobRole }}</label>
+        <div *ngFor="let jobRole of jobRoles" class="jobRole">
+          <input type="checkbox" value="{{ jobRole.title }}" id="jobRole{{ jobRole.id }}" />
+          <label for="jobRole{{ jobRole.id }}">{{ jobRole.title }}</label>
         </div>
       </div>
       <div class="yourReferral">
@@ -58,8 +62,9 @@
       </div>
     </div>
     <div class="avatar">
-      <img src="../../../../assets/fromDrive/profile.png" alt="" />
-      <div class="uploadDisplayPicture">UPLOAD DISPLAY PICTURE</div>
+      <img id='avatar' src="{{DISPLAY_PICTURE_PATH}}" alt="avatar" />
+      <label class="uploadDisplayPicture" for="uploadDisplayPicture">UPLOAD DISPLAY PICTURE</label>
+      <input type="file" accept="image/png, image/gif, image/jpeg" id="uploadDisplayPicture" (change)="onImageUpload($event)">
       <div class="description">Max. image size: 5 MB</div>
     </div>
   </div>

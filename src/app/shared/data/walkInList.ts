@@ -1,4 +1,4 @@
-import {IWalkInListItem} from '../../app/shared/interfaces';
+import {IWalkInListItem} from '../interfaces';
 import { instructionalDesigner, softwareEngineer, softwareQualityEngineer} from './jobRoles';
 
 export let walkInListJson:IWalkInListItem[] = [

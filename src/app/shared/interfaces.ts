@@ -1,7 +1,8 @@
 
 export interface IJobRole {
+    id: number;
     title: string;
-    image: string;
+    image?: string;
 }
 
 export interface IWalkInListItem {
@@ -17,12 +18,13 @@ export interface IWalkInListItem {
 export interface IPersonalInformation {
     firstName : string;
     lastName : string;
+    displayPictureDataUrl : string;
     email : string;
     countryCode : string;
     phoneNumber : string;
     resumePath : string;
     portfolioUrl? : string;
-    preferredJobRoles : string[];
+    preferredJobRoles : number[];
     referralName? : string
     sendJobRelatedMails : boolean;
 }

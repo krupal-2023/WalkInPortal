@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IWalkInListItem } from 'src/app/shared/interfaces';
-import { instructionalDesigner } from 'src/assets/data/jobRoles';
+import { instructionalDesigner } from 'src/app/shared/data/jobRoles';
 
 @Component({
   selector: 'app-walk-in-list-item',

@@ -14,7 +14,7 @@
 }
 
 .personalInformation {
-  width: 480px;
+  width: 50%;
   border-radius: 2px;
   padding: 24px;
   display: flex;
@@ -33,32 +33,11 @@
   .yourReferral {
     display: flex;
     flex-direction: column;
-
-    input {
-      font-size: 16px;
-      border: none;
-      border-bottom: 1px solid black;
-      font-family: "Quicksand-Medium";
-      &:focus {
-        outline: none;
-      }
-    }
   }
 
   .phoneNumber {
     display: flex;
     flex-direction: column;
-
-    input {
-      border: none;
-      font-family: "Quicksand-Medium";
-      font-size: 16px;
-      &:focus {
-        outline: none;
-      }
-      border-bottom: 1px solid black;
-    }
-
     .row {
       display: flex;
       column-gap: 3px;
@@ -73,16 +52,31 @@
     }
   }
 
-  .uploadResume {
-    display: flex;
-    align-items: center;
-    column-gap: 7px;
-    color: $accentColor;
-    font-size: 14px;
+  .uploadResumeWrapper {
+    .uploadResume {
+      display: flex;
+      align-items: center;
+      column-gap: 7px;
 
-    img {
-      height: 24px;
-      width: 19px;
+      img {
+        height: 24px;
+        width: 19px;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      label {
+        color: $accentColor;
+        font-size: 14px;
+      }
+    }
+    #uploadedResumeName {
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
@@ -115,6 +109,9 @@
 
   img {
     width: 112px;
+    height: 112px;
+    object-fit: scale-down;
+    border-radius: 50%;
   }
 
   .uploadDisplayPicture {
@@ -125,6 +122,9 @@
     font-size: 10px;
     color: grey;
   }
+  input {
+    display: none;
+  }
 }
 
 .nextButton {
@@ -132,7 +132,6 @@
   border: none;
   font-size: 14px;
   background-color: $primary;
-  font-family: "Quicksand-Medium";
   padding: 5px 27px;
   width: 90px;
   height: 28px;
