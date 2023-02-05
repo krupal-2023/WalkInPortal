@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IPersonalInformation } from 'src/app/shared/interfaces';
+import { IPersonalInformation, IEducationalQualification } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-create-an-account',
@@ -7,8 +7,9 @@ import { IPersonalInformation } from 'src/app/shared/interfaces';
   styleUrls: ['./create-an-account.component.scss']
 })
 export class CreateAnAccountComponent {
-  currentStepNumber:number = 1;
+  currentStepNumber:number = 2;
   personalInformation:IPersonalInformation|undefined;
+  educationalQualification: IEducationalQualification|undefined;
 
   updateCurrentStepNumber(stepNumber:any):void {
     this.currentStepNumber = stepNumber;
@@ -18,4 +19,7 @@ export class CreateAnAccountComponent {
     this.personalInformation = data;
   }
 
+  saveEducationalQualification(data:IEducationalQualification):void {
+    this.educationalQualification = data;
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { instructionalDesigner, softwareEngineer, softwareQualityEngineer } from 'src/app/shared/data/jobRoles';
-import { IJobRole, IPersonalInformation } from 'src/app/shared/interfaces';
+import { IEducationalQualification, IJobRole, IPersonalInformation } from 'src/app/shared/interfaces';
 import { DISPLAY_PICTURE_PATH } from 'src/app/shared/paths';
 
 @Component({
@@ -42,6 +42,9 @@ export class PersonalInformationComponent implements AfterViewInit {
   @Output() savePersonalInformation: EventEmitter<IPersonalInformation> =
     new EventEmitter<IPersonalInformation>();
 
+  @Input()
+  educationalQualification:IEducationalQualification|undefined;
+
   loadSavedData():void {
     if(this.savedPersonalInformation != undefined) {
       
@@ -76,6 +79,7 @@ export class PersonalInformationComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.loadSavedData();
+    console.log(this.educationalQualification)
   }
 
   onImageUpload(event: Event): void {
@@ -89,7 +93,6 @@ export class PersonalInformationComponent implements AfterViewInit {
     let fileReader: FileReader = new FileReader();
     if (uploadDisplayPicture != null && uploadDisplayPicture.files != null) {
       fileReader.readAsDataURL(uploadDisplayPicture.files[0]);
-      // this.displayPicture = uploadDisplayPicture.files[0].name;
     }
     fileReader.onload = (fileReaderEvent) => {
       const dataUrl:string = fileReaderEvent.target?.result as string;
@@ -124,9 +127,9 @@ export class PersonalInformationComponent implements AfterViewInit {
       ) as HTMLInputElement;
       let value = element.value;
       if (value == '') {
-        alert('All Fields are Required !!!');
-        element.focus();
-        return;
+        // alert('All Fields are Required !!!');
+        // element.focus();
+        // return;
       } else {
         tempPersonalInformation[singleTextInput] = value;
       }

@@ -17,16 +17,16 @@
     </div>
   </div>
   <div *ngIf="isEducationalQualificationOpen == true" class="container">
-    <div id="percentage">
+    <div class="percentage">
       <label for="percentage"> Aggregate Percentage* </label>
-      <input type="number" />
+      <input type="number" id="percentage" />
     </div>
-    <div id="yearOfPassing">
+    <div class="yearOfPassing">
       <label for="yearOfPassing">Year Of Passing*</label>
-      <select>
+      <select id="yearOfPassing">
         <option
-          *ngFor="let yearOfPassing of yearsOfPassing"
-          value="yearOfPassing"
+          *ngFor="let yearOfPassing of yearsOfPassing;index as id"
+          value="{{id}}"
         >
           {{ yearOfPassing }}
         </option>
@@ -34,21 +34,21 @@
     </div>
 
     <div class="row">
-      <div id="qualification">
+      <div class="qualification">
         <label for="qualification"> Qualification* </label>
-        <select>
+        <select id="qualification">
           <option
-            *ngFor="let qualification of qualifications"
-            value="qualification"
+            *ngFor="let qualification of qualifications;index as id"
+            value="{{id}}"
           >
             {{ qualification }}
           </option>
         </select>
       </div>
-      <div id="stream">
+      <div class="stream">
         <label for="stream"> Stream* </label>
         <select id="stream">
-          <option *ngFor="let stream of streams" value="stream">
+          <option *ngFor="let stream of streams; index as id" value="{{id}}">
             {{ stream }}
           </option>
         </select>
@@ -56,26 +56,26 @@
     </div>
 
     <div class="row">
-        <div id="college">
+        <div class="college">
             <label for="college">
 College*
             </label>
-            <select>
-                <option *ngFor='let college of colleges' value="college">
+            <select id="college">
+                <option *ngFor='let college of colleges;index as id' value="{{id}}">
                     {{ college }}
                 </option>
             </select>
         </div>
-        <div id="otherCollege">
+        <div class="otherCollege">
             <label for="otherCollege">
 If others, please enter your college name
             </label>
-            <input type="text" >
+            <input type="text"  id="otherCollege">
         </div>
     </div>
-    <div id="collegeLocation">
+    <div class="collegeLocation">
         <label for="collegeLocation">Where is your college located?*</label>
-        <input type="text" >
+        <input type="text"  id="collegeLocation">
     </div>
   </div>
 </div>

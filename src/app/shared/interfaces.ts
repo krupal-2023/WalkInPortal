@@ -28,3 +28,13 @@ export interface IPersonalInformation {
     referralName? : string
     sendJobRelatedMails : boolean;
 }
+
+export interface IEducationalQualification {
+    percentage: number;
+    yearOfPassingId: number;
+    qualificationId: number;
+    streamId: number;
+    collegeId: number;
+    otherCollege: string;
+    collegeLocation: string;
+}

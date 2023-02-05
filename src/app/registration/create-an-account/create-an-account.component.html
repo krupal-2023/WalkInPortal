@@ -16,7 +16,12 @@
         (savePersonalInformation)="savePersonalInformation($event)" 
         [savedPersonalInformation]="personalInformation">
     </app-personal-information>
-    <app-qualification *ngIf="currentStepNumber == 2" (updateCurrentStepNumber)="updateCurrentStepNumber($event)"></app-qualification>
+    <app-qualification 
+        *ngIf="currentStepNumber == 2" 
+        (updateCurrentStepNumber)="updateCurrentStepNumber($event)"
+        [educationalQualification]="educationalQualification"
+        (saveEducationalQualification)="saveEducationalQualification($event)">
+    </app-qualification>
     <app-review-and-proceed 
         *ngIf="currentStepNumber == 3" 
         (updateCurrentStepNumber)="updateCurrentStepNumber($event)"

@@ -17,19 +17,19 @@
     padding: 24px;
     row-gap: 37px;
 
-    #percentage,
-    #yearOfPassing,
-    #collegeLocation {
+    .percentage,
+    .yearOfPassing,
+    .collegeLocation {
       display: flex;
       flex-direction: column;
       row-gap: 3px;
         width: 180px;
     }
 
-    #qualification,
-    #stream,
-    #college,
-    #otherCollege {
+    .qualification,
+    .stream,
+    .college,
+    .otherCollege {
         display: flex;
         flex-direction: column;
         row-gap: 4px;
