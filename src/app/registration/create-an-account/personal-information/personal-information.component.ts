@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterViewInit, OnInit } from '@angular/core';
 import { instructionalDesigner, softwareEngineer, softwareQualityEngineer } from 'src/app/shared/data/jobRoles';
 import { IEducationalQualification, IJobRole, IPersonalInformation } from 'src/app/shared/interfaces';
 import { DISPLAY_PICTURE_PATH } from 'src/app/shared/paths';
@@ -8,7 +8,10 @@ import { DISPLAY_PICTURE_PATH } from 'src/app/shared/paths';
   templateUrl: './personal-information.component.html',
   styleUrls: ['./personal-information.component.scss'],
 })
-export class PersonalInformationComponent implements AfterViewInit {
+export class PersonalInformationComponent implements AfterViewInit, OnInit {
+
+  @Input()
+  readOnly:boolean = false;
   
   DISPLAY_PICTURE_PATH: string = DISPLAY_PICTURE_PATH;
 
@@ -29,6 +32,10 @@ export class PersonalInformationComponent implements AfterViewInit {
     'portfolioUrl',
     'referralName',
   ];
+
+  optionalTextInputs: string[] = [
+    'referralName'
+  ]
 
   displayPictureDataUrl: string = '';
   resumePath: string = '';
@@ -125,10 +132,10 @@ export class PersonalInformationComponent implements AfterViewInit {
         singleTextInput
       ) as HTMLInputElement;
       let value = element.value;
-      if (value == '') {
-        // alert('All Fields are Required !!!');
-        // element.focus();
-        // return;
+      if (value == '' && !this.optionalTextInputs.includes(singleTextInput)) {
+        alert('All Fields are Required !!!');
+        element.focus();
+        return;
       } else {
         tempPersonalInformation[singleTextInput] = value;
       }
@@ -161,5 +168,12 @@ export class PersonalInformationComponent implements AfterViewInit {
 
     //jump to next page
     this.updateCurrentStepNumber.emit(2);
+  }
+
+  ngOnInit(): void {
+    if(this.readOnly) {
+      let element:HTMLInputElement = document.getElementsByClassName("main-personal-information")[0] as HTMLInputElement;
+      element.classList.add('readOnly');
+    }
   }
 }

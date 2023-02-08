@@ -2,8 +2,8 @@
     <img class="backButton" src="../../../../assets/fromDrive/back.svg" alt="Back">
     <div class="title">Create An Account</div>
     <div class="actions">
-        <button class="cancelButton">CANCEL</button>
-        <button class="createButton">CREATE</button>
+        <button class="cancelButton" (click)="onCancel($event)">CANCEL</button>
+        <button class="createButton" [ngClass]="{enableCreate: currentStepNumber == 3}">CREATE</button>
     </div>
 </div>
 <div class="body">
@@ -27,6 +27,8 @@
     <app-review-and-proceed 
         *ngIf="currentStepNumber == 3" 
         (updateCurrentStepNumber)="updateCurrentStepNumber($event)"
-        [savedPersonalInformation]="personalInformation" >
+        [personalInformation]="personalInformation"
+        [educationalQualification]="educationalQualification"
+        [professionalQualification]="professionalQualification">
     </app-review-and-proceed>
 </div>

@@ -27,6 +27,7 @@
     .createButton {
         opacity: 40%;
         cursor: not-allowed;
+        pointer-events: none;
     }
 
     .actions {
@@ -41,6 +42,11 @@
         height: 24px;
         position: absolute;
         left: 28px;
+    }
+
+    .enableCreate {
+        opacity: 100%;
+        cursor: pointer;
     }
 }
 

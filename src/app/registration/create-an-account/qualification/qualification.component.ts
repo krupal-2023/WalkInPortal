@@ -37,7 +37,7 @@ export class QualificationComponent {
     this.educationalQualification = this.educationalComponent.save(false);
     if(this.educationalQualification==null) return;
     
-    this.professionalQualification = this.professionalComponent.save();
+    this.professionalQualification = this.professionalComponent.save(false);
     if(this.professionalComponent==null) return;
 
     console.log('onclick previous',this.professionalQualification)
@@ -56,7 +56,7 @@ export class QualificationComponent {
     this.educationalQualification = this.educationalComponent.save(true);
     if(this.educationalQualification==null) return;
 
-    this.professionalQualification = this.professionalComponent.save();
+    this.professionalQualification = this.professionalComponent.save(true);
     if(this.professionalComponent==null) return;
 
     //send data to parent

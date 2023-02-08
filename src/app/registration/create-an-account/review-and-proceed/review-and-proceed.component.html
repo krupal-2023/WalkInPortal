@@ -1,21 +1,29 @@
-<div class="header">
-    <div class="title">
-        Personal Information
-    </div>
-    <div class="edit">
-        <img src="../../../../assets/fromDrive/pencil.png" alt="Edit">
-        <div>Edit</div>
-    </div>
-</div>
 
-<app-personal-information ></app-personal-information>
-
-<div class="header">
-    <div class="title">
-        Qualifications
+    <div class="header">
+        <div class="title">
+            Personal Information
+        </div>
+        <div class="edit">
+            <img src="../../../../assets/fromDrive/pencil.png" alt="Edit">
+            <div>Edit</div>
+        </div>
     </div>
-    <div class="edit">
-        <img src="../../../../assets/fromDrive/pencil.png" alt="Edit">
-        <div>Edit</div>
+    
+    <app-personal-information [readOnly]='true' [savedPersonalInformation]="personalInformation"></app-personal-information>
+    
+    <div class="header">
+        <div class="title">
+            Qualifications
+        </div>
+        <div class="edit">
+            <img src="../../../../assets/fromDrive/pencil.png" alt="Edit">
+            <div>Edit</div>
+        </div>
     </div>
-</div>
+    
+    <app-educational-qualification [readOnly]='true' [educationalQualification]="educationalQualification" ></app-educational-qualification>
+    
+    <app-professional-qualification [readOnly]='true' [professionalQualification]="professionalQualification"></app-professional-qualification>
+    <div class="footer">
+        <button (click)="onClickPrevious()" >PREVIOUS</button>
+    </div>

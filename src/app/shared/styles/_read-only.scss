@@ -1,0 +1,58 @@
+@mixin readOnlyProperties {
+  pointer-events: none;
+
+  input {
+    border: none;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+    
+    &:not(:checked) + label {
+      display: none;
+    }
+  }
+
+  select {
+    border: none;
+    /* for IE10 */
+    ::-ms-expand {
+      display: none;
+    }
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+  }
+
+  button {
+    display: none;
+  }
+
+  //Hide Date input calender icon
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  //Personal Information Details
+  .avatar {
+    label,
+    .description {
+      display: none;
+    }
+  }
+  .sendMeJobRelated {
+    input {
+      display: block;
+    }
+  }
+
+  //professional qualification
+  .technologies {
+    row-gap: 0;
+
+  }
+}

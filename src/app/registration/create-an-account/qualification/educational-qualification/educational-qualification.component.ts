@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { Component, Input, AfterViewInit, OnInit } from '@angular/core';
 import { IEducationalQualification } from 'src/app/shared/interfaces';
 
 @Component({
@@ -6,10 +6,13 @@ import { IEducationalQualification } from 'src/app/shared/interfaces';
   templateUrl: './educational-qualification.component.html',
   styleUrls: ['./educational-qualification.component.scss']
 })
-export class EducationalQualificationComponent implements AfterViewInit {
+export class EducationalQualificationComponent implements AfterViewInit, OnInit {
 
   @Input()
   educationalQualification:IEducationalQualification|undefined;
+  
+  @Input()
+  readOnly:boolean = false;
 
   isEducationalQualificationOpen:boolean = true;
 
@@ -36,8 +39,12 @@ export class EducationalQualificationComponent implements AfterViewInit {
 
   textInputIds:string[] = [
     'percentage','otherCollege','collegeLocation',
-
   ];
+
+  optionalTextInputs: string[] = [
+    'otherCollege'
+  ]
+
   selectInputIds:string[] = [
     'yearOfPassing','qualification','stream','college',
   ]
@@ -49,8 +56,9 @@ export class EducationalQualificationComponent implements AfterViewInit {
     for(const textInputId of this.textInputIds) {
       let element:HTMLInputElement = document.getElementById(textInputId) as HTMLInputElement;
       
-      if(element.value=='' && giveWarning ) {
+      if(element.value=='' && giveWarning && !this.optionalTextInputs.includes(textInputId)) {
         alert('All fields are required !');
+        element.focus();
         return undefined;
       }
       educationalQualification[textInputId] = element.value;
@@ -93,5 +101,12 @@ export class EducationalQualificationComponent implements AfterViewInit {
 
   toggleEducationalQualification():void {
     this.isEducationalQualificationOpen = !this.isEducationalQualificationOpen;
+  }
+
+  ngOnInit(): void {
+    if(this.readOnly) {
+      let element:HTMLInputElement = document.getElementsByClassName("main-educational-qualification")[0] as HTMLInputElement;
+      element.classList.add('readOnly');
+    }
   }
 }

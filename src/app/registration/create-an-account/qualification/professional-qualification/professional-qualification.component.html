@@ -1,6 +1,6 @@
-<div class="main">
+<div class="main-professional-qualification">
   <div class="header">
-    <div class="title">Educational Qualification</div>
+    <div class="title">Professional Qualification</div>
     <div class="dropdownIcon">
       <img
         *ngIf="isProfessionalQualificationOpen == true"
@@ -20,26 +20,76 @@
     <div class="applicantType">
       <label>Applicant Type*</label>
       <div class="row">
-        <div class="radioWrapper" *ngFor="let applicantType of applicantTypes;index as id">
-          <input type="radio" name="applicantType" id="applicantType{{id}}" />
-          <label for="applicantType{{id}}">{{applicantType}}</label>
+        <div class="radioWrapper" *ngFor="let applicantType of applicantTypes">
+          <input type="radio" name="applicantType" id="applicantType{{applicantType}}" (click)="onChangeApplicantType()"/>
+          <label for="applicantType{{applicantType}}">{{applicantType}}</label>
         </div>
       </div>
     </div>
     <div class="technicalSection">
+      <label for="yearsOfExperience" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">Years of Experience*</label>
+      <input type="number" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}" id="yearsOfExperience">
+      <label for="currentCTC" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">Current CTC* (In Rupees)</label>
+      <input type="number" id="currentCTC" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">
+      <label for="expectedCTC" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">Expected CTC* (In Rupees)</label>
+      <input type="number" id="expectedCTC" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">
+      <label class="title" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">Select All The Technologies You Expertise In*</label>
+      <div class="technologies" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">
+        <div
+          class="technology"
+          [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}"
+          *ngFor="let technology of technologies; index as indexOfTech"
+        >
+          <input type="checkbox" id="expertise-technology{{ indexOfTech }}" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}"/>
+          <label for="expertise-technology{{ indexOfTech }}" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">{{ technology }}</label>
+        </div>
+      </div>
+      <div class="otherTechnology" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">
+        <label for="expertiseOtherTechnology" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}"> If others, please mention </label>
+        <input type="text" id="expertiseOtherTechnology" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}" />
+      </div>
       <label class="title">Select All The Technologies You Are Familiar In</label>
       <div class="technologies">
         <div
           class="technology"
           *ngFor="let technology of technologies; index as indexOfTech"
         >
-          <input type="checkbox" id="technology{{ indexOfTech }}" />
-          <label for="technology{{ indexOfTech }}">{{ technology }}</label>
+          <input type="checkbox" id="familiar-technology{{ indexOfTech }}" />
+          <label for="familiar-technology{{ indexOfTech }}">{{ technology }}</label>
         </div>
       </div>
       <div class="otherTechnology">
-        <label for="otherTechnology"> If others, please mention </label>
-        <input type="text" id="otherTechnology" />
+        <label for="familiarOtherTechnology"> If others, please mention </label>
+        <input type="text" id="familiarOtherTechnology" />
+      </div>
+      <div class="noticePeriod" [ngClass]="{'doNotShowExperiencedDev':isFresherDev==true}">
+        <label
+          >Are you currently on notice period?*</label
+        >
+        <div class="row">
+          <div class="radioWrapper">
+          <input type="radio" name="noticePeriod" id="onNoticePeriod" /><label
+            for="onNoticePeriod"
+            >Yes</label
+          ></div>
+          <div class="radioWrapper">
+          <input type="radio" name="noticePeriod" id="notOnNoticePeriod" />
+          <label for="notOnNoticePeriod"
+            >No</label
+          ></div>
+        </div>
+        <div class="row">
+          <div class="whenNoticePeriodEnds">
+            <label for="whenNoticePeriodEnds">If Yes, when will your notice period end?*</label>
+            <input type="date" id="whenNoticePeriodEnds">
+          </div>
+          <div class="howLongNoticePeriod">
+            <label for="howLongNoticePeriod">How long is your notice period?* (Mention in months)</label>
+            <select  id="howLongNoticePeriod">
+              <option *ngFor="let noticePeriod of noticePeriods">{{noticePeriod}}</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="previouslyApplied">
         <label

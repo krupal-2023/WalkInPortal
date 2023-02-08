@@ -40,9 +40,17 @@ export interface IEducationalQualification {
 }
 
 export interface IProfessionalQualification {
-    applicantTypeId: number;
-    technologyIds: number[];
-    otherTechnology: string;
+    applicantType: string;
+    yearsOfExperience: string;
+    currentCTC: string;
+    expectedCTC: string;
+    expertiseTechnologyIds: number[];
+    expertiseOtherTechnology: string;
+    familiarTechnologyIds: number[];
+    familiarOtherTechnology: string;
+    onNoticePeriod: boolean;
+    whenNoticePeriodEnds?: string;
+    howLongNoticePeriodId: number;
     haveYouAppeared: boolean;
     ifYesWhichRole: string
 }
